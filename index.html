@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-
+    <a id="home"></a>
     <h1 class="hide">Starship Troopers 20th Anniversary Re-release!</h1>
 
     <header id="mainHeader" class="row">
-      <nav class="small-12 columns">
+      <nav class="small-12">
         <h2 class="hide">Main Navigation</h2>
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
         <div class="title-bar-left">
@@ -23,24 +23,23 @@
       </div>
       <div id="main-menu">
         <ul id="mainNav">
-          <li><a href="#home" data-link="home">Home</a></li>
-          <li><a data-link="about" href="#about">About</a></li>
-          <li><a href="#videos" data-link="videos">Trailer</a></li>
-          <li><a href="#gallery" data-link="gallery">Gallery</a></li>
-          <li><a href="#register" data-link="register">Register</a></li>         
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#videos">Trailer</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#register">Register</a></li>        
         </ul>
       </div>
     </nav>
       </nav>
-          <a id="home"></a>
     </header>
 
-    <section id="mainPromo" data-interchange="[images/home-bckgd-sm.png, small], [images/home-1.png, large]">
+    <section id="mainPromo" data-interchange="[images/home-sm.png, small], [images/home-md.png, medium], [images/home-1.png, large]">
       <h2 class="hide">Movie Promo</h2> 
       <div class="row">
         <div class="small-12 medium-7 medium-centered columns" id="background">
           <!-- <img src="images/lg.png" alt="promo image" id="promoImg"> -->
-          <img id="promoImg" data-interchange="[images/promo-sm.png, small], [images/lg.png, large]">
+          <img id="promoImg" data-interchange="[images/promo-sm.png, small], [images/promo-lg.png, medium]">
         </div>
       </div>
 
@@ -67,13 +66,7 @@
       </div>
     </section>
 
-    <!-- drop down for mobile -->
-<!--     <ul class="accordion" data-accordion data-allow-all-closed="true">
-      <li class="accordion-item" data-accordion-item>
-        <!-- Accordion tab title -->
-<!--         <a href="#" class="accordion-title heading"><img src="images/meetCrew.svg" alt="meet the crew" class="heading"></a>
-        <div class="accordion-content" data-tab-content> -->
-
+<!-- characters -->
     <section id="characters" class="hide-for-small-only">
     <img src="images/meetCrew.svg" alt="Meet the Crew" class="heading">
 
@@ -177,13 +170,6 @@
 
       </div>
     </section>
-<!--         </div>
-      </li>
-    </ul> -->
-
-  <!-- image carosel for tablet and up -->
-  
-
     </section>
 
     <a id="videos"></a>
@@ -193,16 +179,31 @@
   <section class="row">
     <h2 class="hide">Movie Trailer</h2>
 
-    <div class="small-12 columns">
-      <img src="images/trailer.svg" class="heading" alt="trailer">
+    <div class="small-12 medium-6 medium-centered large-4 columns">
+      <img src="images/trailer.svg" alt="trailer" class="heading">
     </div>
 
-    <div id="vidPlayer" class="small-12 columns">
-      <img src="images/screen.png" alt="trailer screen" id="trailerScreen">
-      <div id="btns" class="medium-8 medium-centered columns">
+    <div id="vidPlayer" class="small-12 small-centered columns">
+      <!-- <img src="images/screen.png" alt="trailer screen" id="trailerScreen"> -->
+        <video poster="images/trailer-screen.png">
+          <source src="video/trailer-final_1.mp4">
+        </video>
+
+
+      <div id="lg-controls" class="large-12 columns">
+<!--         <img src="images/controls-bckgd.png" alt="control panel" id="control"> -->
+        <div class="large-4 columns show-for-large">
+        <img src="images/lever-track.png" alt="lever track" id="track">
+        <img src="images/lever.png" alt="video lever" id="lever">
+        </div>
+
+      <div id="btns" class="small-10 small-centered medium-6 medium-centered large-8 large-offset-4 columns">
         <ul>
           <li>
             <img src="images/playPause.svg" alt="play pause button" id="playPause" class="vidButton">
+          </li>
+          <li>
+            <img src="images/stop.svg" alt="stop button" id="stop" class="vidButton">
           </li>
           <li>
             <img src="images/rewind-button.svg" alt="rewind button" id="rewind" class="vidButton">
@@ -212,16 +213,7 @@
           </li>
         </ul>
       </div>
-
-    <!-- medium-large screen extra controls -->
-    <section class="row hide-for-small-only">
-      <div id="lg-controls" class="medium-12 medium-centered columns">
-        <img src="images/controls-bckgd.png" alt="control panel" id="control">
-        <img src="images/lever-track.png" alt="lever track" id="track">
-        <img src="images/lever.png" alt="video lever" id="lever">
-      </div>
-    </section>
-
+    </div>
 
   </section>
 
@@ -233,36 +225,8 @@
   <section class="row">
     <h2 class="hide">Photo Gallery</h2>
 
-    <!--experimental-->
 
-    <div id="mainImage" class="small-11 small-centered columns"></div>
-
-    <div class="small-1 columns">
-      <div id="gallery-left"></div>
-    </div>
-
-    <div class="small-10 columns galleryContainer">
-      <div class="small-3 columns">
-        <img id="brain-bug" src="images/brain-bug.jpg" class="thumbnail gallery">
-      </div>
-
-      <div class="small-3 columns">
-        <img id="bugs" src="images/bugs.jpg" class="thumbnail gallery">
-      </div>
-
-      <div class="small-3 columns">
-        <img id="buddies" src="images/buddies.jpg" class="thumbnail gallery">
-      </div>
-    </div>
-
-    <div class="small-1 columns">
-      <div id="gallery-right"></div>
-    </div>
-
-
-    <!-- endexperimental -->
-
-    <div class="orbit small-12 large-11 columns" role="region" aria-label="Image Gallery" data-orbit>
+    <div class="orbit small-12 large-11 columns gallery" role="region" aria-label="Image Gallery" data-orbit>
         <div class="orbit-wrapper">
           <div class="orbit-controls">
             <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
@@ -303,38 +267,11 @@
           </ul>
         </div>
       </div>
-
-
-
-    <!-- <div class="small-12 columns">
-      <div id="mainImg" class="medium-10 medium-centered columns">
-        <img src="images/brain-bug.jpg" alt="brain bug" id="brain-bug">
-      </div>
-    </div>
-
-    <section class="row">
-      <h3 class="hide">Thumbnails</h3>
-      <div class="small-4 medium-3 columns">
-        <img src="images/bugs.jpg" alt="bugs" id="bugs" class="thumbnail">
-      </div>
-
-      <div class="small-4 medium-3 columns">
-        <img src="images/buddies.jpg" alt="buddies" id="buddies" class="thumbnail">
-      </div>
-
-      <div class="small-4 medium-3 columns">
-        <img src="images/space.png" alt="space" id="space" class="thumbnail">
-      </div>
-
-      <div class="small-4 medium-3 columns">
-        <img src="images/troopers.jpg" alt="troopers" id="troopers" class="thumbnail">
-      </div>
-    </section> -->
   </section>
 
 <a id="register"></a>
 <!-- Register Page -->
-<div id="registerTitle" class="small-12 columns">
+<div id="registerTitle" class="small-12 medium-6 medium-centered large-5 columns">
   <img src="images/wyltkm.svg" alt="would you like to know more?">
 </div>
 <section class="row">
