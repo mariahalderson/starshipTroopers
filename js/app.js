@@ -1,54 +1,61 @@
 $(document).foundation()
 
 var navLinks = document.querySelectorAll('#mainNav li a'),
+	mainMenu = document.querySelector('#main-menu'),
 	aboutLink = document.querySelector('#aboutLink'),
 	marginY = 0,
 	destination = 0,
-	speed = 10,
+	speed = 15,
 	scroller = null,
 	vidPlayer = document.querySelector('video'),
 	lever = document.querySelector('#lever'),
 	playPause = document.querySelector('#playPause'),
+	stop = document.querySelector('#stop'),
 	rewind = document.querySelector('#rewind'),
 	forward = document.querySelector('#forward'),
 	mainImg = document.querySelector('#mainImage'),
-	thumbs = Array.from(document.querySelectorAll('.gallery')),
-	leftImg = document.querySelector('#gallery-left');
+	thumbs = document.querySelectorAll('.gallery');
 
 //smooth scrolling
-function initScroll(elementId){
-	//how far from top is each page tag
-	destination = document.getElementById(elementId).offsetTop;
-
-	if (destination < 0) {
-		destination = 0;
-	}
-	
-	if(marginY < destination){
+function initDownScroll(dest) {	
+	if(marginY < dest){
 		scroller = setTimeout(function(){
-			initScroll(elementId);
+			initDownScroll(dest);
 		}, 1);
-	}if(marginY >= destination){
+	}if(marginY >= dest){
 		clearTimeout(scroller);
+		scroller = null;
 	}
 
 	marginY += speed;
 	window.scroll(0, marginY);
-
-//need to figure out how to scroll back up
-
-	// if(destination > destination){
-	// 	marginY -= speed;
-	// 	window.scroll(0, marginY);
-	// }
-
-	console.log(elementId+" destination: "+destination);
 }
 
+function initUpScroll(dest) {	
+	if(marginY > dest){
+		scroller = setTimeout(function() {
+			initUpScroll(dest);
+		}, 1);
+	}if(marginY <= dest){
+		clearTimeout(scroller);
+	}
+
+	marginY -= speed;
+	window.scroll(0, marginY);
+}
 
 function hopper(e){
 	e.preventDefault();
-	initScroll(this.dataset.link);
+
+	destination = document.querySelector(`${this.getAttribute('href')}`).offsetTop;
+
+	// check the 2 values here - if current position (marginY) < destination, do the normal scroll. if it's more, do the opposite cuz that means we want to scroll upward
+
+	if (marginY < destination) { 
+		initDownScroll(destination); 
+	} else {
+		initUpScroll(destination);
+	}
 }
 
 //change color of active navigation links by adding "active class"
@@ -79,26 +86,31 @@ function ffwd(){
 	vidPlayer.currentTime += 5;
 }
 
+function stopVid(){
+	vidPlayer.pause();
+	vidPlayer.currentTime = 0;
+}
+
 function fillImage(){
 	mainImg.innerHTML = `<img src="images/${this.id}.jpg" alt="gallery image">`
 }
 
-// function imageLeft(){
-
-// 	mainImg.innerHTML = `<img src="images/${thumbs[]}.jpg" alt="gallery image">`
+// function closeMenu(){
+// 	if(window.screen.width<=1023px){
+// 	mainMenu.style="display:none;"
+// 	} else{
+// 		hopper();
+// 	}
 // }
 
 
 navLinks.forEach(navLink => navLink.addEventListener('click', hopper));
 navLinks.forEach(navLink => navLink.addEventListener('click', addActive));
+// mainMenu.addEventListener('click', closeMenu);
 playPause.addEventListener('click', togglePlay);
 lever.addEventListener('click', initVid);
+stop.addEventListener('click', stopVid);
 rewind.addEventListener('click', back);
 forward.addEventListener('click', ffwd);
 
 thumbs.forEach(thumb => thumb.addEventListener('click', fillImage));
-// leftImg.addEventListener('click', imageLeft);
-
-
-
-
