@@ -251,6 +251,7 @@ video{
 	max-width: 20%;
 }
 
+
 #trailerScreen{
 	display: block;
 }
@@ -388,11 +389,20 @@ form{
 
 	}
 
+	#main-menu{
+		width: 1200px;
+	}
+
 	#mainNav{
-		background-color: #000;
+		background: rgba(0, 0, 0, 0.8);
+		border-radius: 40%;
 		list-style-type: none;
-		width: 100%;
 		margin-top: 0;
+		left: auto;
+		right: auto;
+		max-width: 1024px;
+		display: block;
+		margin: 0 auto;
 		z-index: 2;
 		animation: none;
 	}
@@ -404,17 +414,18 @@ form{
 		border: none;
 		color: #00ffff;
 		padding: 1em;
-		margin-right: 2em;
+		margin-right: 1.75em;
 	}
 
 	#mainNav li:first-child{
 		padding-top: 0;
-		margin-left: 18%;
+		margin-left: 50px;
 	}
 
 	#mainNav li:last-child{
 		padding-bottom: 0;
 		border: none;
+		margin-right: 0;
 	}
 
 	#mainNav li a{

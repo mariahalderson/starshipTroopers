@@ -14,23 +14,24 @@
     <h1 class="hide">Starship Troopers 20th Anniversary Re-release!</h1>
 
     <header id="mainHeader" class="row">
-      <nav class="small-12">
+      <nav class="small-12 columns">
         <h2 class="hide">Main Navigation</h2>
-        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-        <div class="title-bar-left">
-          <button class="menu-icon" type="button" data-toggle="main-menu"></button>
+
+        <div class="title-bar" data-responsive-toggle="main-menu" data-animate="hinge-in-from-top hinge-out-from-top" data-hide-for="large">
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-toggle="main-menu"></button>
+          </div>
         </div>
-      </div>
-      <div id="main-menu">
-        <ul id="mainNav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#videos">Trailer</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#register">Register</a></li>        
-        </ul>
-      </div>
-    </nav>
+
+        <div id="main-menu" class="menu align-center">
+          <ul id="mainNav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about" id="aboutLink">About</a></li>
+            <li><a href="#videos">Trailer</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#register">Register</a></li>        
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -226,43 +227,68 @@
     <h2 class="hide">Photo Gallery</h2>
 
 
-    <div class="orbit small-12 large-11 columns gallery" role="region" aria-label="Image Gallery" data-orbit>
+    <div class="orbit small-12 large-11 large-centered columns gallery" role="region" aria-label="Image Gallery" data-orbit data-auto-play="false" data-use-m-u-i="false">
         <div class="orbit-wrapper">
           <div class="orbit-controls">
             <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
             <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
           </div>
-          <ul class="orbit-container">
+          <ul>
 
             <li class="is-active orbit-slide">
               <figure class="orbit-figure small-11 small-centered columns">
-                <img src="images/bugs.jpg" alt="bugs" class="orbit-image">
+                <img data-interchange="[images/g_ships-sm.png, small], [images/g_ships-lg.png, medium]" alt="space ships" class="orbit-image">
               </figure>
             </li>
 
             <li class="orbit-slide">
               <figure class="orbit-figure small-11 small-centered columns">
-                <img src="images/buddies.jpg" alt="buddies" class="orbit-image">
+                <img data-interchange="[images/g_friendship-sm.png, small], [images/g_friendship-lg.png, medium]" alt="making the friendship vow" class="orbit-image">
               </figure>
             </li>
 
             <li class="orbit-slide">
               <figure class="orbit-figure small-11 small-centered columns">
-                <img src="images/troopers.jpg" alt="troopers" class="orbit-image">
+                <img data-interchange="[images/g_pilot-sm.png, small], [images/g_pilot-lg.png, medium]" alt="piloting through the battlefield" class="orbit-image">
+              </figure>
+            </li> 
+
+            <li class="orbit-slide">
+              <figure class="orbit-figure small-11 small-centered columns">
+                <img data-interchange="[images/g_guts-sm.png, small], [images/g_guts-lg.png, medium]" alt="covered in bug guts" class="orbit-image">
+              </figure>
+            </li>
+
+             <li class="orbit-slide">
+              <figure class="orbit-figure small-11 small-centered columns">
+                <img data-interchange="[images/g_giantBug-sm.png, small], [images/g_giantBug-lg.png, medium]" alt="Giant bug" class="orbit-image">
               </figure>
             </li>
 
             <li class="orbit-slide">
               <figure class="orbit-figure small-11 small-centered columns">
-                <img src="images/brain-bug.jpg" alt="brain bug" class="orbit-image">
+                <img data-interchange="[images/g_brainBug-sm.png, small], [images/g_brainBug-lg.png, medium]" alt="The brain bug" class="orbit-image">
               </figure>
             </li>
 
             <li class="orbit-slide">
-              <figure class="orbit-figure medium-11 medium-centered columns">
-                <img src="images/space.png" alt="space ship" class="orbit-image">
+              <figure class="orbit-figure small-11 small-centered columns">
+                <img data-interchange="[images/g_troopers-sm.png, small], [images/g_troopers-lg.png, medium]" alt="Ace and Rico" class="orbit-image">
               </figure>
             </li>
+
+            <li class="orbit-slide">
+              <figure class="orbit-figure small-11 small-centered columns">
+                <img data-interchange="[images/g_bugAttack-sm.png, small], [images/g_bugAttack-lg.png, medium]" alt="bugs attacking base" class="orbit-image">
+              </figure>
+            </li>
+
+            <li class="orbit-slide">
+              <figure class="orbit-figure small-11 small-centered columns">
+                <img data-interchange="[images/g_shooter-sm.png, small], [images/g_shooter-lg.png, medium]" alt="shooter" class="orbit-image">
+              </figure>
+            </li>                         
+
 
           </ul>
         </div>
@@ -278,7 +304,7 @@
   <h2 class="hide">Register</h2>
   <div class="small-10 small-centered medium-4 columns">
     <p>fill out the form below to be the first to know about release dates, special offers, and more!</p>
-    <form>
+    <form action="/action.php" method="get">
       <label for="name">NAME</label>
       <input name="name" type="text">
 

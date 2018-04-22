@@ -1,7 +1,7 @@
 $(document).foundation()
-
+console.log("heloo");
 var navLinks = document.querySelectorAll('#mainNav li a'),
-	mainMenu = document.querySelector('#main-menu'),
+	mainMenu = document.querySelector('#mainNav'),
 	aboutLink = document.querySelector('#aboutLink'),
 	marginY = 0,
 	destination = 0,
@@ -91,26 +91,14 @@ function stopVid(){
 	vidPlayer.currentTime = 0;
 }
 
-function fillImage(){
-	mainImg.innerHTML = `<img src="images/${this.id}.jpg" alt="gallery image">`
-}
-
-// function closeMenu(){
-// 	if(window.screen.width<=1023px){
-// 	mainMenu.style="display:none;"
-// 	} else{
-// 		hopper();
-// 	}
-// }
-
 
 navLinks.forEach(navLink => navLink.addEventListener('click', hopper));
 navLinks.forEach(navLink => navLink.addEventListener('click', addActive));
-// mainMenu.addEventListener('click', closeMenu);
 playPause.addEventListener('click', togglePlay);
 lever.addEventListener('click', initVid);
 stop.addEventListener('click', stopVid);
 rewind.addEventListener('click', back);
 forward.addEventListener('click', ffwd);
 
-thumbs.forEach(thumb => thumb.addEventListener('click', fillImage));
+
+
