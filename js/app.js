@@ -1,8 +1,7 @@
 $(document).foundation()
 console.log("heloo");
-var navLinks = document.querySelectorAll('#mainNav li a'),
+var navLinks = document.querySelectorAll('.page'),
 	mainMenu = document.querySelector('#mainNav'),
-	aboutLink = document.querySelector('#aboutLink'),
 	marginY = 0,
 	destination = 0,
 	speed = 15,
